@@ -1,0 +1,105 @@
+[gd_scene load_steps=9 format=3 uid="uid://vubpyo678nd0"]
+
+[ext_resource type="Script" uid="uid://blfuhr6vda4sf" path="res://map.gd" id="1_e0an3"]
+[ext_resource type="PackedScene" uid="uid://c3fo6skjdrwtw" path="res://rock.tscn" id="2_wijl4"]
+[ext_resource type="PackedScene" uid="uid://cpw1xcxx0ny61" path="res://portal.tscn" id="3_e0an3"]
+[ext_resource type="PackedScene" uid="uid://5nwtdcia608" path="res://mob.tscn" id="4_p5pve"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_e0an3"]
+a = Vector2(0, 647)
+b = Vector2(2, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_p5pve"]
+a = Vector2(1143, 0)
+b = Vector2(1144, 644)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_urblq"]
+a = Vector2(0, -3)
+b = Vector2(1145, -2)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_iw27f"]
+a = Vector2(1144.1633, 640.1486)
+b = Vector2(6.1529355, 638.9829)
+
+[node name="map" type="Node2D"]
+script = ExtResource("1_e0an3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -4.470154
+offset_top = -2.9999695
+offset_right = 1142.1604
+offset_bottom = 647.19165
+rotation = 0.0008147939
+metadata/_edit_use_anchors_ = true
+
+[node name="Rock" parent="." instance=ExtResource("2_wijl4")]
+position = Vector2(247, 168)
+
+[node name="Rock2" parent="." instance=ExtResource("2_wijl4")]
+position = Vector2(797, 253)
+
+[node name="Rock3" parent="." instance=ExtResource("2_wijl4")]
+position = Vector2(282, 506)
+
+[node name="Rock4" parent="." instance=ExtResource("2_wijl4")]
+position = Vector2(754, 418)
+
+[node name="Portal" parent="." instance=ExtResource("3_e0an3")]
+position = Vector2(647, 110)
+rotation = 0.058962964
+target_scene_path = "res://inside.tscn"
+target_spawn_position = Vector2(530, 210)
+
+[node name="leftwall" type="StaticBody2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="leftwall"]
+color = Color(0.17254902, 0.5529412, 0.5529412, 1)
+polygon = PackedVector2Array(-2, -4, -2, 646, 6, 646, 5, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leftwall"]
+shape = SubResource("SegmentShape2D_e0an3")
+
+[node name="rightwall" type="StaticBody2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="rightwall"]
+position = Vector2(1141, 1)
+color = Color(0.17254902, 0.5529412, 0.5529412, 1)
+polygon = PackedVector2Array(-2, -4, -2, 646, 6, 646, 5, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rightwall"]
+shape = SubResource("SegmentShape2D_p5pve")
+
+[node name="topwall" type="StaticBody2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="topwall"]
+position = Vector2(39.000004, 14)
+scale = Vector2(14.250007, 0.82003784)
+color = Color(0.17254902, 0.5529412, 0.5529412, 1)
+polygon = PackedVector2Array(-2.8771918, -17.072382, 77.19294, -17.072382, 77.19294, -20.73075, -2.8771918, -21.950205)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="topwall"]
+shape = SubResource("SegmentShape2D_urblq")
+
+[node name="bottomwall" type="StaticBody2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="bottomwall"]
+position = Vector2(1132, 702)
+scale = Vector2(0.99215347, -0.1)
+color = Color(0.17254902, 0.5529412, 0.5529412, 1)
+polygon = PackedVector2Array(-1142.0079, 545.9995, 14.063232, 545.9995, 14.063232, 625.9995, -1143.0159, 645.9995)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bottomwall"]
+rotation = -0.0003666745
+shape = SubResource("SegmentShape2D_iw27f")
+
+[node name="Mob" parent="." instance=ExtResource("4_p5pve")]
+position = Vector2(84, 549)
+
+[node name="Mob2" parent="." instance=ExtResource("4_p5pve")]
+position = Vector2(987, 587)
+
+[node name="Mob3" parent="." instance=ExtResource("4_p5pve")]
+position = Vector2(62, 104)

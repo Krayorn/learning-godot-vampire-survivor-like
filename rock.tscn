@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3fo6skjdrwtw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b4wt3"]
+radius = 9.010132
+height = 44.040073
+
+[node name="Rock" type="StaticBody2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-26.000002, 11)
+scale = Vector2(0.8103448, 0.9230769)
+color = Color(0.6194887, 0.61948866, 0.6194887, 1)
+polygon = PackedVector2Array(4, 2, 62, 2, 52, -40, 47, -21, 41, -50, 32, -20, 9, -49)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_b4wt3")

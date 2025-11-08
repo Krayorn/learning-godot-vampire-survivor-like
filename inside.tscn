@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceegypi52071u"]
+
+[ext_resource type="PackedScene" uid="uid://cpw1xcxx0ny61" path="res://portal.tscn" id="2_7ujdm"]
+
+[node name="Inside" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [187.0, -81.0]
+metadata/_edit_vertical_guides_ = [567.0]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1148.0
+offset_bottom = 644.0
+color = Color(0.26666668, 0.14901961, 0.03137255, 1)
+
+[node name="Portal" parent="." instance=ExtResource("2_7ujdm")]
+position = Vector2(565, 95)
+target_scene_path = "res://map.tscn"
+target_spawn_position = Vector2(650, 250)
