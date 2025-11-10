@@ -18,7 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Player="*res://player.tscn"
-SceneManager="*res://sceneManager.gd"
+Hud="*res://hud.tscn"
+Game="*res://game.tscn"
 
 [dotnet]
 
