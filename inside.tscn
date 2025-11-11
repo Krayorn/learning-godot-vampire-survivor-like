@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ceegypi52071u"]
+[gd_scene load_steps=3 format=3 uid="uid://ceegypi52071u"]
 
 [ext_resource type="PackedScene" uid="uid://cpw1xcxx0ny61" path="res://portal.tscn" id="2_7ujdm"]
+[ext_resource type="PackedScene" uid="uid://g1lkwsb6gg2y" path="res://Item.tscn" id="2_r8opg"]
 
 [node name="Inside" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [187.0, -81.0]
@@ -18,3 +19,24 @@ color = Color(0.26666668, 0.14901961, 0.03137255, 1)
 position = Vector2(565, 95)
 target_scene_path = "res://map.tscn"
 target_spawn_position = Vector2(650, 250)
+
+[node name="heal" parent="." instance=ExtResource("2_r8opg")]
+position = Vector2(219, 435)
+cost = 15
+value = 15.0
+description = "Heal 15hp"
+kind = "heal"
+
+[node name="damage" parent="." instance=ExtResource("2_r8opg")]
+position = Vector2(400, 436)
+cost = 25
+value = 1.0
+description = "increase damage"
+kind = "damage"
+
+[node name="rateoffire" parent="." instance=ExtResource("2_r8opg")]
+position = Vector2(568, 437)
+cost = 50
+value = 0.3
+description = "increase rate of fire"
+kind = "rate_of_fire"

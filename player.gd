@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name PlayerCharacter
 
 @onready var hud = get_node("/root/Hud")
+
 signal death
 var health := 100.0
 
@@ -24,5 +25,16 @@ func _physics_process(delta: float) -> void:
 		if health <= 0:
 			death.emit()
 
+func heal(value):
+	health += value
+	%HealthBar.value = health
+
+func increase_damage(value):
+	$Weapon.damage += value
+
+func increase_rof(value):
+	$Weapon.update_rof(value)
+
+
 func registerMobKill() -> void:
-	hud.gain_gold(10)
+	hud.gain_gold(5)

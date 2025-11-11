@@ -9,8 +9,8 @@ func _physics_process(_delta: float) -> void:
 	velocity = direction * 200
 	move_and_slide()
 
-func take_damage():
-	health -= 1
-	if health == 0:
+func take_damage(dmg):
+	health -= dmg
+	if health <= 0:
 		player.registerMobKill()
 		queue_free()

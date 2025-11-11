@@ -147,7 +147,7 @@ position = Vector2(-90.946815, -102.052895)
 rotation = 0.00077038095
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.7
+wait_time = 1.2
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
